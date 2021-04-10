@@ -1,0 +1,16 @@
+{
+  "name": "udemy-practical-webpack",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "@types/velocity-animate": "^2.0.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "velocity-animate": "^1.5.2"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "udemy-practical-webpack",
+  "main": "index.js",
+  // npm run 定義したコマンド で実行できる
+  "scripts": {
+    "build": "webpack"
+  },
+  // 開発時に必要 --save-dev
+  "devDependencies": {
+  },
+  // 出力されるファイルに必要 アプリケーションの実行に必要 --save
+  "dependencies": {
+  }
+}
