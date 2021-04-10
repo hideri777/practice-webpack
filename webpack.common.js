@@ -1,5 +1,6 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   // エントリーポイント
@@ -13,8 +14,10 @@ module.exports = {
   },
   plugins: [
     // 出力先を一度きれいにしてくれる(ファイル削除)
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ["**/*", "!**.html"], //削除対象を指定 htmlファイルは除外
+    new CleanWebpackPlugin({}),
+    // バンドルされたファイルを読み込む記述があるhtmlファイルを生成する
+    new HtmlWebpackPlugin({
+      template: "./src/html/index.html", // ここで指定したhtmlがひな形
     }),
   ],
 };
