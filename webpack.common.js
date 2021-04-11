@@ -14,8 +14,8 @@ module.exports = {
     // osの依存なしで行けるようにpath.resolve利用
     path: path.resolve(__dirname, "public"),
     // 出力ファイル プレースホルダーapp/another.bundle.jsが出力される
-    filename: "js/[name].bundle.js",
-    chunkFilename: "js/[name].js",
+    filename: "js/[name].[contenthash].js", // hash名をつけることでキャッシュ対策ができる
+    chunkFilename: "js/[name].[contenthash].js",
   },
   // splichunckpluginの設定 どのファイルを分割するか
   optimization: {
