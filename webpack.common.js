@@ -20,8 +20,22 @@ module.exports = {
   // splichunckpluginの設定 どのファイルを分割するか
   optimization: {
     splitChunks: {
-      chunks: "initial", // 分割対象 initialはimportしているモジュールが対象 node_modules以下の
-      name: "vendor", // 出力ファイル名
+      chunks: "initial",
+      cacheGroups: {
+        vendor: {
+          //任意のプロパティ
+          // chunks: "initial",
+          test: /node_modules/, // 分割の対象 今回はnode_modules以下
+          name: "vendor", // 出力ファイル名
+        },
+        vendorModules: {
+          // chunks: "initial",
+          test: /src[\\/]js[\\/]modules/,
+          name: "vendor-modules",
+          minSize: 0, // 分割対象のモジュールの最小サイズ デフォルトは30000 = 30kb
+          minChunks: 2, // モジュールがいくつの場所で利用されていれば分割するか指定する
+        },
+      },
     },
   },
   plugins: [
