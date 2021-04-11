@@ -15,6 +15,14 @@ module.exports = {
     path: path.resolve(__dirname, "public"),
     // 出力ファイル プレースホルダーapp/another.bundle.jsが出力される
     filename: "js/[name].bundle.js",
+    chunkFilename: "js/[name].js",
+  },
+  // splichunckpluginの設定 どのファイルを分割するか
+  optimization: {
+    splitChunks: {
+      chunks: "initial", // 分割対象 initialはimportしているモジュールが対象 node_modules以下の
+      name: "vendor", // 出力ファイル名
+    },
   },
   plugins: [
     // 出力先を一度きれいにしてくれる(ファイル削除)
