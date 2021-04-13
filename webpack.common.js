@@ -38,6 +38,15 @@ module.exports = {
       },
     },
   },
+  module: {
+    rules: [
+      {
+        test: /\.js$/, // loaderの対象ファイルを正規表現で記述
+        exclude: /node_modules/, // 除外対象 今回はnode_moduleは不要
+        loader: "babel-loader", // 利用するローダー
+      },
+    ],
+  },
   plugins: [
     // 出力先を一度きれいにしてくれる(ファイル削除)
     new CleanWebpackPlugin({}),
