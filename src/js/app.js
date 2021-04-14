@@ -14,3 +14,6 @@ $("body")
 velocity($("h1"), "fadeIn", { duration: 2000, loop: true });
 
 // console.log(a); わざとエラーを出してみる
+
+const z = { z: 3 };
+console.log({ x: 1, y: 2, ...z }); // => {x:1, y:2, z:3}
