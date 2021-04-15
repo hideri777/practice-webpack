@@ -41,6 +41,16 @@ module.exports = {
   module: {
     rules: [
       {
+        // eslint
+        enforce: "pre", // バベルローダーより早く検証する
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+        options: {
+          fix: true, // 一部エラーの自動修正
+        },
+      },
+      {
         test: /\.js$/, // loaderの対象ファイルを正規表現で記述
         exclude: /node_modules/, // 除外対象 今回はnode_moduleは不要
         loader: "babel-loader", // 利用するローダー
